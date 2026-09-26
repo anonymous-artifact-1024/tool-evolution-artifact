@@ -32,10 +32,10 @@ block summary and score records.
 
 ### `primary_contrasts.csv`
 
-The 20 preregistered primary comparisons. Estimates are task-level mean
-differences after averaging the three repetitions within each task, model, and
-condition. The confidence limits are simultaneous 95% max-t bootstrap
-intervals over the complete common task set.
+The 20 primary comparisons were fixed before formal execution. Estimates are
+task-level mean differences after averaging the three repetitions within each
+task, model, and condition. The confidence limits are simultaneous 95% max-t
+bootstrap intervals over the complete common task set.
 
 ### `main_results.json`
 
