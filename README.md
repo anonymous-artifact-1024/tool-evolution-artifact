@@ -18,10 +18,10 @@ completed execution.
 
 - 230 main-study maintenance tasks and 20 pre-experiment tasks.
 - 2 models, 7 tool conditions, and 3 repetitions.
-- 1,380 completed blocks and 9,660 completed episodes.
+- 1,380 blocks reached a terminal protocol state, covering 9,660 scheduled episodes.
 - 9,657 observed score cells and 3 protocol-defined missing-evidence cells.
 - 227 tasks in the common-complete primary analysis.
-- 20 preregistered primary contrasts.
+- 20 primary contrasts fixed before formal execution.
 
 The compact artifact is self-contained for inspecting and verifying the
 reported results. Re-running model inference additionally requires the pinned
@@ -85,7 +85,8 @@ The artifact code is released under the MIT License. LinuxFLBench retains its
 own MIT copyright notice in `licenses/LinuxFLBench-LICENSE`. Linux kernel
 source code is not redistributed by this repository.
 
-The core runtime files named in the activation record are preserved byte for
-byte, and their SHA-256 values match the frozen provenance record. Portable
+The core implementation and configuration files named in the activation record
+are preserved byte for byte, and their SHA-256 values match the frozen
+provenance record. Portable
 release-only helpers (`verify_artifact.py`, `verify_dataset.py`, and
-`summarize_results.py`) are separate from the frozen runtime.
+`summarize_results.py`) are separate from the frozen execution implementation.
