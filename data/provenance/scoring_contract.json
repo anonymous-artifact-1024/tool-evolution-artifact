@@ -1,0 +1,138 @@
+{
+  "dataset_observations": {
+    "ground_truth_paths_with_leading_dot_slash": 0,
+    "task_count": 250,
+    "tasks_with_exactly_one_correct_file": 250
+  },
+  "equivalence_fixtures": [
+    {
+      "actual": [
+        "a.c"
+      ],
+      "predicted": [
+        "a.c"
+      ],
+      "score": {
+        "first_relevant_rank": 1,
+        "recall_at_1": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_5": 1.0,
+        "reciprocal_rank": 1.0,
+        "relevant_count": 1,
+        "submitted_count": 1
+      }
+    },
+    {
+      "actual": [
+        "a.c"
+      ],
+      "predicted": [
+        "x.c",
+        "a.c"
+      ],
+      "score": {
+        "first_relevant_rank": 2,
+        "recall_at_1": 0.0,
+        "recall_at_10": 1.0,
+        "recall_at_5": 1.0,
+        "reciprocal_rank": 0.5,
+        "relevant_count": 1,
+        "submitted_count": 2
+      }
+    },
+    {
+      "actual": [
+        "a.c"
+      ],
+      "predicted": [
+        "x.c"
+      ],
+      "score": {
+        "first_relevant_rank": null,
+        "recall_at_1": 0.0,
+        "recall_at_10": 0.0,
+        "recall_at_5": 0.0,
+        "reciprocal_rank": 0.0,
+        "relevant_count": 1,
+        "submitted_count": 1
+      }
+    },
+    {
+      "actual": [
+        "a.c",
+        "b.c"
+      ],
+      "predicted": [
+        "b.c"
+      ],
+      "score": {
+        "first_relevant_rank": 1,
+        "recall_at_1": 0.5,
+        "recall_at_10": 0.5,
+        "recall_at_5": 0.5,
+        "reciprocal_rank": 1.0,
+        "relevant_count": 2,
+        "submitted_count": 1
+      }
+    },
+    {
+      "actual": [
+        "a.c",
+        "b.c"
+      ],
+      "predicted": [
+        "x.c",
+        "a.c",
+        "b.c"
+      ],
+      "score": {
+        "first_relevant_rank": 2,
+        "recall_at_1": 0.0,
+        "recall_at_10": 1.0,
+        "recall_at_5": 1.0,
+        "reciprocal_rank": 0.5,
+        "relevant_count": 2,
+        "submitted_count": 3
+      }
+    },
+    {
+      "actual": [
+        "a.c"
+      ],
+      "predicted": [],
+      "score": {
+        "first_relevant_rank": null,
+        "recall_at_1": 0.0,
+        "recall_at_10": 0.0,
+        "recall_at_5": 0.0,
+        "reciprocal_rank": 0.0,
+        "relevant_count": 1,
+        "submitted_count": 0
+      }
+    }
+  ],
+  "format": "saner-scoring-contract-v1",
+  "implementation_sha256": "bfc9dc2e69d69d09e0cb0b1be7553954a499e2d8b76954d42e3368caed27c1cb",
+  "protocol": {
+    "maximum_ranked_paths": 10,
+    "missing_legal_submission": "all metrics zero",
+    "prediction_normalization": "remove one leading ./ and retain first duplicate position",
+    "primary": "reciprocal_rank",
+    "scoring_location": "trusted evaluator outside the agent container",
+    "secondary": [
+      "recall_at_1",
+      "recall_at_5",
+      "recall_at_10"
+    ]
+  },
+  "status": "verified_for_preexperiment",
+  "upstream": {
+    "commit": "de65c3958f264137835eb23cacf3591fb89fc09b",
+    "evaluate_driver_sha256": "ccff35f566cdcd2a160922ba1073cd79536985ea607d3f3a9a3cb60358048771",
+    "evaluation_metrics_sha256": "0c3cf0c2962857fd652bdeb04d9cfb9df13a16c6f814b28acbd94468db2a8927",
+    "license": "MIT",
+    "license_sha256": "61e89e906a463543000ebb411d04b80fcb80604cc9bc1a01eb51dbcb5f380732",
+    "repository": "https://github.com/FudanSELab/LinuxFLBench.git",
+    "working_tree_clean": false
+  }
+}

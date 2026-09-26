@@ -1,0 +1,135 @@
+{
+  "checkpoint_policy": "resume-once",
+  "condition_order": [
+    "A",
+    "D1",
+    "B2",
+    "B1",
+    "D2",
+    "C1",
+    "C2"
+  ],
+  "eligible_for_main_analysis": false,
+  "experiment_id": "saner-main-v1",
+  "ground_truth_mounted_in_agent_container": false,
+  "input_token_accounting": "offline_reference_qwen3_14b_revision_40c069824f4251a91eefaf281ebe4c544efd3e18",
+  "kernel_version": "2.6.24",
+  "model": "qwen-plus-2025-12-01",
+  "outcomes": [
+    {
+      "attempted_tool_calls": 13,
+      "condition": "A",
+      "generations": 13,
+      "log": "01-A.jsonl",
+      "position": 1,
+      "removed_history_groups": 0,
+      "schema_sha256": "7edc3ae209d998ccd5ffcbea39ce81808ae1b62cc1eb8e62ec3b272eab06b78b",
+      "status": "submitted",
+      "submission": [
+        "drivers/acpi/video.c"
+      ]
+    },
+    {
+      "attempted_tool_calls": 12,
+      "condition": "D1",
+      "generations": 12,
+      "log": "02-D1.jsonl",
+      "position": 2,
+      "removed_history_groups": 0,
+      "schema_sha256": "ce4d5b295e6b23f41c8cbac2d338d47e908a5095fc39f0c76520af06f317af32",
+      "status": "submitted",
+      "submission": [
+        "drivers/acpi/video.c",
+        "drivers/video/backlight/backlight.c",
+        "drivers/acpi/blacklist.c",
+        "drivers/acpi/utils.c"
+      ]
+    },
+    {
+      "attempted_tool_calls": 14,
+      "condition": "B2",
+      "generations": 14,
+      "log": "03-B2.jsonl",
+      "position": 3,
+      "removed_history_groups": 0,
+      "schema_sha256": "6dc600497cd117a4244b0a13b472f595603e3cfe504390f4f9726fb5bc75c734",
+      "status": "submitted",
+      "submission": [
+        "drivers/acpi/video.c",
+        "drivers/acpi/blacklist.c",
+        "drivers/video/backlight/backlight.c",
+        "drivers/acpi/utils.c",
+        "drivers/acpi/bus.c"
+      ]
+    },
+    {
+      "attempted_tool_calls": 31,
+      "condition": "B1",
+      "generations": 31,
+      "log": "04-B1.jsonl",
+      "position": 4,
+      "removed_history_groups": 0,
+      "schema_sha256": "24a02f0e0de1cb98c7ace2b9472507efefebb2d59cfd7a8d0855ee88375b7870",
+      "status": "submitted",
+      "submission": [
+        "drivers/acpi/video.c",
+        "drivers/acpi/blacklist.c"
+      ]
+    },
+    {
+      "attempted_tool_calls": 22,
+      "condition": "D2",
+      "generations": 22,
+      "log": "05-D2.jsonl",
+      "position": 5,
+      "removed_history_groups": 0,
+      "schema_sha256": "11bb262b8d168719cfc5a3740e2828a853b5bd8bf05ac08987bbf3d23c209cda",
+      "status": "submitted",
+      "submission": [
+        "drivers/acpi/video.c"
+      ]
+    },
+    {
+      "attempted_tool_calls": 15,
+      "condition": "C1",
+      "generations": 15,
+      "log": "06-C1.jsonl",
+      "position": 6,
+      "removed_history_groups": 0,
+      "schema_sha256": "7904bd5d14c8b1ccea18323bc755de92f816352271bc7bdc792b7f5dc6318cec",
+      "status": "submitted",
+      "submission": [
+        "drivers/acpi/video.c"
+      ]
+    },
+    {
+      "attempted_tool_calls": 20,
+      "condition": "C2",
+      "generations": 20,
+      "log": "07-C2.jsonl",
+      "position": 7,
+      "removed_history_groups": 0,
+      "schema_sha256": "726e49c6e4e9957a18d0610307c11cb413e71f6cc12e6aa18e175167920959ee",
+      "status": "submitted",
+      "submission": [
+        "drivers/acpi/video.c"
+      ]
+    }
+  ],
+  "partition": "main",
+  "planned_eligibility": "main_analysis_after_complete_integrity_audit",
+  "profile": "service",
+  "provenance": {
+    "function_index_sha256": "5938cadadd56ee32199bf8b2147a54076009303cb873713ec20f5921eda5bd2c",
+    "runner_sha256": "f8293d0692c216d33e0b442435c1283cdfee6167bd16d0f05479a3bb0e3e87ce",
+    "schedule_sha256": "da059901770ee7ad9f72fd55e9b17b0560db05d7e43af6b9361aaa1af1787706",
+    "task_catalog_sha256": "f7312d32cc428648b0c95faf7913183412991d9bdc346729aa94e49fb76a8729"
+  },
+  "record_kind": "main_condition_matrix_block_v1",
+  "repetition": 1,
+  "retained_partial_logs": [],
+  "scoring": "deferred_to_trusted_host_evaluator",
+  "seed": 2027,
+  "task_id": "10042",
+  "thinking": false
+}

@@ -1,0 +1,10 @@
+{
+  "dataset_name": "LinuxFLBench",
+  "upstream_repository": "https://github.com/FudanSELab/LinuxFLBench.git",
+  "git_commit": "de65c3958f264137835eb23cacf3591fb89fc09b",
+  "dataset_file": "dataset/LINUXFLBENCH_dataset.jsonl",
+  "task_count": 250,
+  "sha256": "cc60e91b37a78d1cfb85f12c0bf884e41362afe798ac7ca2fa83e4b27bde974c",
+  "record_kind": "development_dataset_identity",
+  "note": "Records the locally checked upstream dataset identity; does not declare protocol freeze or empirical-result eligibility."
+}

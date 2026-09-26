@@ -1,0 +1,15 @@
+{
+  "experiment_id": "saner-preexperiment-v1",
+  "status": "ready_for_execution_pending_budget_authorization",
+  "partition": "preexperiment",
+  "task_catalog": "manifests/agent_tasks/preexperiment.jsonl",
+  "task_count": 20,
+  "conditions": ["A", "B1", "C1", "D1", "B2", "C2", "D2"],
+  "models": ["Qwen3-14B", "qwen3-max-2026-01-23"],
+  "repetitions": 3,
+  "scheduled_episodes": 840,
+  "condition_order_seed": 2027,
+  "fresh_container_per_task_model_repetition_block": true,
+  "scoring_location": "trusted_host_evaluator_outside_agent_container",
+  "eligible_for_main_analysis": false
+}

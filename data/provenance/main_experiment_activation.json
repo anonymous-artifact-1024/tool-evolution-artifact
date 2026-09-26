@@ -1,0 +1,49 @@
+{
+  "execution_amendment": {
+    "conditions_within_block": "sequential_in_frozen_order",
+    "hidden_retries_added": false,
+    "local_and_service_may_overlap": true,
+    "local_workers": 1,
+    "maximum_simultaneous_block_processes": 5,
+    "partition_rule": "model-specific frozen block ordinal modulo 4",
+    "prompts_tools_models_parameters_tasks_repetitions_scoring_changed": false,
+    "service_blocks_per_shard": [
+      173,
+      173,
+      172,
+      172
+    ],
+    "service_workers": 4,
+    "timing": "before_first_main_episode"
+  },
+  "experiment_id": "saner-main-v1",
+  "governance": {
+    "created_before_first_main_episode": true,
+    "local_gpu_request_concurrency_remains_one": true,
+    "original_schedule_and_prior_activations_retained": true,
+    "parallelism_is_operational_and_outcome_blind": true,
+    "result_driven_reruns_or_rule_changes_forbidden": true,
+    "runtime_and_gate_hashes_must_match_before_each_launch": true
+  },
+  "provenance": {
+    "activation_v1_sha256": "416758b89386a91f30789985209bc5bb681209440ba5b6efdfd72123ff9e6e52",
+    "activation_v2_sha256": "f861dea5204b0362e3e6b816520b138a081be03664542a065fb7f0749cffea24",
+    "frozen_schedule_sha256": "da059901770ee7ad9f72fd55e9b17b0560db05d7e43af6b9361aaa1af1787706",
+    "original_freeze_sha256": "e18864b02f7e3e55f0e3a3b0a8135c71e23b62c96e0b3a1d84d57e0cfe1742c7",
+    "parallel_runner_gate_sha256": "10c3a26c011edb5f655fc6eaafc810fa6f1428d6e85835298ead37862c579664",
+    "parallel_validation_sha256": "6b296fc77937468d634b6013c2de674d4903db7c57f2199fd17118badf8edd28",
+    "runtime_sha256": {
+      "configs/execution/parallel_execution_v2.json": "0c3795e336f9bd9b8e40a176268d6f062ccaac3e7fc8fb15fb4cad96c47b8017",
+      "scripts/activate_main_experiment_v3.py": "24fd124da2e4f489440292e46ce040b37cfce2e1822611351ba6fe4c6b1e3253",
+      "scripts/analyze_main.py": "0d90f9d6d211c1a9ef8dddbd4f4ba693524493603304833947c5a80b1c47f929",
+      "scripts/run_main_block.py": "f8293d0692c216d33e0b442435c1283cdfee6167bd16d0f05479a3bb0e3e87ce",
+      "scripts/run_main_experiment.ps1": "0bf44f097a0f37aae6637a0ca52566d9ee5f2b12b9ea633b84ceacd3e1ae61a4",
+      "scripts/score_main_run.py": "fb2997f196f337dc9cca884ec4f1f0ef6d8177cc740c29476c52084d9f04a629",
+      "src/saner_exp/evaluation/main_analysis.py": "73e6949000100ca5bbeda0c9529d6a962659e717cbc528c06674060862e8cb03"
+    }
+  },
+  "record_kind": "saner-main-experiment-activation-v3-cross-model-parallel",
+  "scientific_design_unchanged": true,
+  "status": "ready_for_execution",
+  "supersedes_for_execution": "manifests/main_experiment_activation_v2.json"
+}

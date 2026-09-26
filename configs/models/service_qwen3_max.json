@@ -1,0 +1,22 @@
+{
+  "profile": "SANER_SERVICE",
+  "role": "service_model",
+  "provider": "Alibaba Cloud Model Studio",
+  "region": "cn-beijing",
+  "billing_mode": "pay_as_you_go",
+  "model": "qwen3-max-2026-01-23",
+  "model_version_policy": "fixed_snapshot",
+  "maximum_input_tokens": 30720,
+  "maximum_output_tokens": 2048,
+  "thinking": false,
+  "api_protocol": "openai_compatible_chat_completions",
+  "function_calling": true,
+  "endpoint_from_environment": "SANER_SERVICE_BASE_URL",
+  "credential_from_environment": "SANER_SERVICE_API_KEY",
+  "deployment_validation": "structured_tool_call_probe_passed",
+  "input_token_accounting": "frozen_qwen3_14b_offline_reference",
+  "reference_tokenizer_revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+  "native_tokenizer_compatibility": "fixed_snapshot_and_qwen3_max_alias_rejected",
+  "batch_and_context_cache_compatibility": "fixed_snapshot_not_supported",
+  "experiment_status": "protocol_frozen_execution_paused_by_cost_gate"
+}

@@ -1,0 +1,69 @@
+{
+  "calls_per_category_per_mapped_pair": 10000,
+  "conservative_extension_counts": {
+    "style_0_file": 10000,
+    "style_0_search": 10000,
+    "style_1_file": 10000,
+    "style_1_search": 10000
+  },
+  "explicit_checks": {
+    "conditional_compilation": {
+      "status": "passed",
+      "unsupported_nodes": 0
+    },
+    "error_class_mapping": "passed",
+    "escaping_symlink": "not_supported_by_host",
+    "fixture_unchanged": true,
+    "function_index_ranges": "passed",
+    "multiple_definitions": "passed",
+    "omitted_symbol": "passed",
+    "response_core_source_bytes_limit": 24576,
+    "response_total_bytes_limit": 32768,
+    "response_truncation": "passed",
+    "sandbox_isolation": {
+      "command_forbidden_exec": "ToolInputError",
+      "command_parent_traversal": "ToolInputError",
+      "command_shell_rejected": "ToolInputError",
+      "workspace_absolute_path": "WorkspacePathError",
+      "workspace_parent_traversal": "WorkspacePathError"
+    },
+    "zero_context": "passed"
+  },
+  "mapped_pair_counts": {
+    "file_functionality_0": {
+      "boundary": 10000,
+      "invalid": 10000,
+      "normal": 10000
+    },
+    "file_functionality_1": {
+      "boundary": 10000,
+      "invalid": 10000,
+      "normal": 10000
+    },
+    "search_functionality_0": {
+      "boundary": 10000,
+      "invalid": 10000,
+      "normal": 10000
+    },
+    "search_functionality_1": {
+      "boundary": 10000,
+      "invalid": 10000,
+      "normal": 10000
+    }
+  },
+  "python_version": "3.11.16 | packaged by Anaconda, Inc. | (main, Aug 27 2026, 14:36:16) [MSC v.1942 64 bit (AMD64)]",
+  "record_kind": "formal_tool_contract_verification_v2",
+  "seed": 2027,
+  "source_sha256": {
+    "scripts/verify_tool_contracts_v2.py": "24e37b50cb2f0637a0347bcb9c8aad086b476df0a0b8e61c2b145d724557647c",
+    "src/saner_exp/tools/backend.py": "5f0643d133b4ad3f0ad44437729b7a7af3caa52ad7a28ca124215e0d589d5336",
+    "src/saner_exp/tools/common.py": "c9e5c9f55baf43a51a6e0bbc376e225640906aab590fa063b06076b0107110f2",
+    "src/saner_exp/tools/function_index.py": "40c917d470aeafeeb0ac4746ea4164e7be3e4d4909c18dfeac03f71d219d2754",
+    "src/saner_exp/tools/interfaces.py": "af41221c72dd97d0fab2c6639cabc055b48b0452cb4560e73bd089ef0aaec451",
+    "src/saner_exp/tools/registry.py": "c045490120ae12ef200c9c364caa38963c83c3fdb3845405c494c573a36fc9fc",
+    "src/saner_exp/tools/serialization.py": "ddfbeb419b14ddfb37c0b6fdd90ae187937de5fbea359aa3adc124a49ac70fad"
+  },
+  "status": "passed",
+  "tree_sitter_c_version": "0.24.2",
+  "tree_sitter_version": "0.25.2"
+}

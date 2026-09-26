@@ -1,0 +1,33 @@
+{
+  "format": "saner-parallel-execution-v2",
+  "status": "approved_before_first_main_episode",
+  "experiment_id": "saner-main-v1",
+  "service_model": "qwen-plus-2025-12-01",
+  "service_shard_count": 4,
+  "service_blocks_per_shard": [173, 173, 172, 172],
+  "partition_rule": "zero-based ordinal in the frozen model-specific block list modulo service_shard_count",
+  "local_gpu_shard_count": 1,
+  "cross_model_overlap": true,
+  "maximum_simultaneous_block_processes": 5,
+  "conditions_within_each_block": "sequential_in_frozen_order",
+  "duplicate_shard_process_lock": true,
+  "hidden_model_retries": false,
+  "result_relevant_inputs_changed": false,
+  "capacity_basis": {
+    "observed_plus_requests_per_minute_per_worker": 9.365,
+    "observed_plus_input_tokens_per_minute_per_worker": 115931,
+    "projected_four_worker_requests_per_minute": 37.46,
+    "projected_four_worker_input_tokens_per_minute": 463724,
+    "provider_snapshot_limit_requests_per_minute": 120,
+    "provider_snapshot_limit_tokens_per_minute": 1000000,
+    "provider_limit_checked_on": "2026-09-17",
+    "provider_source": "https://help.aliyun.com/zh/model-studio/qwen-plus"
+  },
+  "approved_scope": [
+    "run one local-GPU block worker at the same time as four independent service block workers",
+    "parallelize only independent task-model-repetition blocks",
+    "preserve the frozen order of seven conditions within every block",
+    "stop the AutoDL instance immediately after the local shard completes",
+    "preserve all prompts, tools, model parameters, task split, repetitions, checkpoints, and scoring"
+  ]
+}

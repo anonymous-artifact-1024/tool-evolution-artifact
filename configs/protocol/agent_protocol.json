@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "status": "offline_reference_context_accounting_approved",
+  "models_required": [
+    "local_open_weight",
+    "service_model"
+  ],
+  "episode": {
+    "maximum_generations": 100,
+    "maximum_attempted_tool_calls": 100,
+    "maximum_input_tokens": 30720,
+    "maximum_output_tokens": 2048,
+    "actions_per_turn": 1,
+    "first_legal_submission_ends_episode": true,
+    "maximum_submitted_paths": 10
+  },
+  "context_accounting": {
+    "measurement_unit": "frozen_Qwen3_14B_reference_tokenizer",
+    "reference_model": "Qwen/Qwen3-14B",
+    "reference_revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+    "transformers_version": "4.57.1",
+    "add_generation_prompt": true,
+    "enable_thinking": false,
+    "include_registered_tools": true,
+    "applies_to_both_models": true,
+    "provider_prompt_tokens_retained_for_audit_and_billing": true
+  },
+  "history": {
+    "always_retain": [
+      "system_rules",
+      "tool_descriptions",
+      "task_statement"
+    ],
+    "trimming_unit": "earliest_complete_assistant_observation_group",
+    "oversized_fixed_prefix": "configuration_failure"
+  },
+  "decoding": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "n": 1,
+    "stream": false,
+    "tool_choice": "auto",
+    "parallel_tool_calls": false,
+    "request_seed": null,
+    "local_thinking": false,
+    "local_generation_config_mode": "vllm"
+  },
+  "repetitions": {
+    "per_task_condition_model": 3,
+    "request_seed_policy": "none",
+    "interpretation": "Repeated runs measure observable system variability; no claim of seeded trajectory pairing."
+  },
+  "scheduling": {
+    "condition_order_seed": 2027,
+    "derivation": "SHA-256 of protocol label, seed, task id, model id, and repetition; isolated MT19937 shuffle",
+    "fresh_conversation_per_condition": true,
+    "fresh_tool_state_per_condition": true
+  },
+  "failures": {
+    "agent_outcomes": [
+      "tool_error",
+      "parse_error",
+      "command_timeout",
+      "generation_budget_exhausted",
+      "tool_call_budget_exhausted"
+    ],
+    "clean_retry_only_for": [
+      "connection_failure",
+      "service_throttling",
+      "service_access_interruption",
+      "runner_failure"
+    ],
+    "maximum_clean_retries": 1,
+    "retain_both_attempts": true,
+    "second_infrastructure_failure": "missing_evidence"
+  },
+  "checkpointing": {
+    "enabled": true,
+    "boundary": "after_complete_model_response_and_all_corresponding_tool_results",
+    "interpretation": "A stable-boundary resume continues the same episode and does not create a new independent repetition.",
+    "unstable_boundary": "retain_partial_attempt_and_start_the_single_clean_retry",
+    "maximum_infrastructure_failures_per_episode": 1,
+    "second_infrastructure_failure": "missing_evidence",
+    "state_includes": [
+      "visible_conversation",
+      "generation_count",
+      "attempted_tool_call_count",
+      "removed_history_group_count",
+      "tool_schema_hash",
+      "episode_budgets"
+    ],
+    "credentials_and_ground_truth_excluded": true
+  },
+  "logging": {
+    "format": "jsonl",
+    "event_types": [
+      "episode_start",
+      "generation",
+      "tool_call",
+      "episode_end"
+    ],
+    "timestamps": "UTC ISO-8601",
+    "credentials_excluded": true,
+    "raw_task_id_excluded_from_model_messages": true
+  }
+}

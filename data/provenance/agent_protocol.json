@@ -1,0 +1,194 @@
+{
+  "event_fields": {
+    "CheckpointResumeEvent": [
+      "event",
+      "recorded_at_utc",
+      "completed_generations",
+      "attempted_tool_calls",
+      "removed_history_groups",
+      "infrastructure_failure_count"
+    ],
+    "EpisodeEndEvent": [
+      "event",
+      "recorded_at_utc",
+      "status",
+      "generations",
+      "attempted_tool_calls",
+      "removed_history_groups",
+      "submission"
+    ],
+    "EpisodeStartEvent": [
+      "event",
+      "recorded_at_utc",
+      "initial_messages_json",
+      "tool_schema_sha256",
+      "max_generations",
+      "max_tool_calls",
+      "max_input_tokens",
+      "max_output_tokens"
+    ],
+    "GenerationEvent": [
+      "event",
+      "recorded_at_utc",
+      "generation",
+      "input_tokens",
+      "request_messages_json",
+      "tool_schema_sha256",
+      "finish_reason",
+      "content",
+      "tool_call_count",
+      "prompt_tokens",
+      "completion_tokens",
+      "response_id",
+      "created",
+      "system_fingerprint",
+      "cached_prompt_tokens"
+    ],
+    "InfrastructureFailureEvent": [
+      "event",
+      "recorded_at_utc",
+      "stage",
+      "category",
+      "next_generation",
+      "completed_generations",
+      "attempted_tool_calls",
+      "removed_history_groups",
+      "error_type",
+      "error_message"
+    ],
+    "ToolEvent": [
+      "event",
+      "recorded_at_utc",
+      "generation",
+      "attempt",
+      "call_id",
+      "tool_name",
+      "arguments_json",
+      "operation",
+      "response_json",
+      "response_bytes",
+      "core_source_bytes",
+      "response_truncated",
+      "terminal"
+    ]
+  },
+  "format": "saner-agent-protocol-candidate-v1",
+  "protocol": {
+    "checkpointing": {
+      "boundary": "after_complete_model_response_and_all_corresponding_tool_results",
+      "credentials_and_ground_truth_excluded": true,
+      "enabled": true,
+      "interpretation": "A stable-boundary resume continues the same episode and does not create a new independent repetition.",
+      "maximum_infrastructure_failures_per_episode": 1,
+      "second_infrastructure_failure": "missing_evidence",
+      "state_includes": [
+        "visible_conversation",
+        "generation_count",
+        "attempted_tool_call_count",
+        "removed_history_group_count",
+        "tool_schema_hash",
+        "episode_budgets"
+      ],
+      "unstable_boundary": "retain_partial_attempt_and_start_the_single_clean_retry"
+    },
+    "context_accounting": {
+      "add_generation_prompt": true,
+      "applies_to_both_models": true,
+      "enable_thinking": false,
+      "include_registered_tools": true,
+      "measurement_unit": "frozen_Qwen3_14B_reference_tokenizer",
+      "provider_prompt_tokens_retained_for_audit_and_billing": true,
+      "reference_model": "Qwen/Qwen3-14B",
+      "reference_revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "transformers_version": "4.57.1"
+    },
+    "decoding": {
+      "local_generation_config_mode": "vllm",
+      "local_thinking": false,
+      "n": 1,
+      "parallel_tool_calls": false,
+      "request_seed": null,
+      "stream": false,
+      "temperature": 0.0,
+      "tool_choice": "auto",
+      "top_p": 1.0
+    },
+    "episode": {
+      "actions_per_turn": 1,
+      "first_legal_submission_ends_episode": true,
+      "maximum_attempted_tool_calls": 100,
+      "maximum_generations": 100,
+      "maximum_input_tokens": 30720,
+      "maximum_output_tokens": 2048,
+      "maximum_submitted_paths": 10
+    },
+    "failures": {
+      "agent_outcomes": [
+        "tool_error",
+        "parse_error",
+        "command_timeout",
+        "generation_budget_exhausted",
+        "tool_call_budget_exhausted"
+      ],
+      "clean_retry_only_for": [
+        "connection_failure",
+        "service_throttling",
+        "service_access_interruption",
+        "runner_failure"
+      ],
+      "maximum_clean_retries": 1,
+      "retain_both_attempts": true,
+      "second_infrastructure_failure": "missing_evidence"
+    },
+    "history": {
+      "always_retain": [
+        "system_rules",
+        "tool_descriptions",
+        "task_statement"
+      ],
+      "oversized_fixed_prefix": "configuration_failure",
+      "trimming_unit": "earliest_complete_assistant_observation_group"
+    },
+    "logging": {
+      "credentials_excluded": true,
+      "event_types": [
+        "episode_start",
+        "generation",
+        "tool_call",
+        "episode_end"
+      ],
+      "format": "jsonl",
+      "raw_task_id_excluded_from_model_messages": true,
+      "timestamps": "UTC ISO-8601"
+    },
+    "models_required": [
+      "local_open_weight",
+      "service_model"
+    ],
+    "repetitions": {
+      "interpretation": "Repeated runs measure observable system variability; no claim of seeded trajectory pairing.",
+      "per_task_condition_model": 3,
+      "request_seed_policy": "none"
+    },
+    "scheduling": {
+      "condition_order_seed": 2027,
+      "derivation": "SHA-256 of protocol label, seed, task id, model id, and repetition; isolated MT19937 shuffle",
+      "fresh_conversation_per_condition": true,
+      "fresh_tool_state_per_condition": true
+    },
+    "schema_version": 1,
+    "status": "offline_reference_context_accounting_approved"
+  },
+  "status": "offline_reference_context_accounting_approved",
+  "system_prompt_sha256": "f6664539dd86e7beef2d9c27f516226e49648d55bca176bd7ff8ba1dad763b1e",
+  "tracked_sha256": {
+    "configs/models/local_qwen3_14b.json": "ccc7904da3c39dae0bef220f95ab14798abeec937f693d18300961c8d55c88ef",
+    "configs/models/service_qwen3_max.json": "3ddded371a4d47206d6c01f1db9b4699c3c6ed4a9f8d789d6c1fb39e773b17e5",
+    "configs/protocol/agent_protocol.json": "d173e40d1a33737f637d0b7bf7f94e5872cb98d4c6ff9015c948316e1aba19b1",
+    "manifests/condition_registry.json": "e09523c72354849b2234093487f55271f10ef4578d650fb5b92c027d28f7390b",
+    "src/saner_exp/agent/loop.py": "6b756439c58b579ac7fc412e851e4883185ad4de3bd7819630eab1d324eeb150",
+    "src/saner_exp/agent/model_client.py": "e0b1b0ed12e40e7a6cd520539da16f1361d21d64d9c4ac4f58383b054b80c7ec",
+    "src/saner_exp/agent/prompt.py": "336baee7b84b012383ec958d3f910e48732176d5bb81f8c495a9ee5309dcb4cf",
+    "src/saner_exp/experiment/schedule.py": "4c8a1cbe7c3aa3e34e58e6e1e5021a423603d7cd0a08b042ee1b5a819e802eb0"
+  }
+}

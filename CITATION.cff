@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Please cite the associated anonymous submission when using this artifact."
+title: "Tool Evolution Study Artifact"
+type: software
+version: 1.0.0
+date-released: 2026-09-26
+authors:
+  - family-names: "Anonymous"
+    given-names: "Authors"
+license: MIT

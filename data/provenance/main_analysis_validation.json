@@ -1,0 +1,45 @@
+{
+  "checks": {
+    "complete_case_common_task_blocking": "passed",
+    "component_grouped_resampling": "passed",
+    "delta_0_01_0_05_sensitivity": "passed",
+    "delta_0_02_primary_classification": "passed",
+    "exploratory_overall_upgrade_separated_from_primary_family": "passed",
+    "group_count_and_imbalance_disclosure": "passed",
+    "joint_max_t_bootstrap": "passed",
+    "table_iv_condition_means_task_differences_and_repetition_variability": "passed",
+    "twenty_primary_contrasts": "passed",
+    "zero_to_one_missing_score_bounds": "passed"
+  },
+  "empirical_data_used": false,
+  "fixture": {
+    "components": 66,
+    "conditions": 7,
+    "models": 2,
+    "repetitions": 3,
+    "score_cells": 9660,
+    "synthetic_missing_cells": 1,
+    "tasks": 230
+  },
+  "formal_resamples_frozen_in_analysis_config": 10000,
+  "observed": {
+    "complete_common_tasks": 229,
+    "component_group_count": 66,
+    "component_maximum_group_size": 4,
+    "component_minimum_group_size": 3,
+    "contrast_count": 20,
+    "excluded_task_ids": [
+      "synthetic-000"
+    ]
+  },
+  "record_kind": "main_analysis_synthetic_validation_v1",
+  "status": "passed",
+  "tracked_sha256": {
+    "analysis_config": "74879d3b3b84d38024eecf10a0c71ae7eac46d3fe0fce72ae56d233cd913a576",
+    "core_analysis": "73e6949000100ca5bbeda0c9529d6a962659e717cbc528c06674060862e8cb03",
+    "factorial_analysis": "2da7279e8516a0a703abbe2a9cb2bfa402c2a4a8fc3fa00cd169b397663e284a",
+    "formal_analyzer": "0d90f9d6d211c1a9ef8dddbd4f4ba693524493603304833947c5a80b1c47f929",
+    "validation_script": "971ad207f9d6c2c44607eacffd79f042d85780761d4d94bceb04feaae35eca29"
+  },
+  "validation_resamples": 1000
+}

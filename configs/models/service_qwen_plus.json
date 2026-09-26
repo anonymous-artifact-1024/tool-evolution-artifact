@@ -1,0 +1,36 @@
+{
+  "profile": "SANER_SERVICE",
+  "role": "service_model",
+  "provider": "Alibaba Cloud Model Studio",
+  "region": "cn-beijing",
+  "billing_mode": "pay_as_you_go",
+  "model": "qwen-plus-2025-12-01",
+  "model_version_policy": "fixed_snapshot",
+  "maximum_input_tokens": 30720,
+  "maximum_output_tokens": 2048,
+  "thinking": false,
+  "api_protocol": "openai_compatible_chat_completions",
+  "function_calling": true,
+  "structured_output": true,
+  "context_cache": false,
+  "batch_inference": false,
+  "endpoint_from_environment": "SANER_SERVICE_BASE_URL",
+  "credential_from_environment": "SANER_SERVICE_API_KEY",
+  "input_token_accounting": "frozen_qwen3_14b_offline_reference",
+  "reference_tokenizer_revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+  "selection_decided_on": "2026-09-15",
+  "selection_basis": [
+    "advisor instruction to reduce formal-experiment cost",
+    "fixed snapshot availability",
+    "required function-calling protocol support",
+    "non-thinking execution support",
+    "OpenAI-compatible endpoint support",
+    "lower public token price"
+  ],
+  "selection_must_not_use": [
+    "preexperiment condition effect direction",
+    "favorable MRR contrast",
+    "comparison with Max condition effects"
+  ],
+  "experiment_status": "selected_for_formal_experiment_pending_technical_validation"
+}

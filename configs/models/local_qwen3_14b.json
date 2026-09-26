@@ -1,0 +1,20 @@
+{
+  "profile": "SANER_LOCAL",
+  "role": "local_open_weight",
+  "model_repository": "Qwen/Qwen3-14B",
+  "model_revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+  "served_model_name": "Qwen3-14B",
+  "dtype": "bfloat16",
+  "max_model_length": 32768,
+  "maximum_output_tokens": 2048,
+  "input_token_accounting": "frozen_qwen3_14b_offline_reference",
+  "thinking": false,
+  "tool_call_parser": "hermes",
+  "server": {
+    "implementation": "vLLM",
+    "version": "0.28.0",
+    "generation_config_mode": "vllm"
+  },
+  "deployment_validation": "seven_condition_matrix_smoke_passed",
+  "experiment_status": "protocol_frozen_execution_paused"
+}

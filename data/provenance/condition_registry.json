@@ -1,0 +1,157 @@
+{
+  "command_policy": {
+    "allowed_commands": [
+      "cat",
+      "find",
+      "grep",
+      "head",
+      "tail",
+      "wc"
+    ],
+    "maximum_timeout_seconds": 300,
+    "shell": false
+  },
+  "conditions": {
+    "A": {
+      "config_sha256": "b3a81c4a9dc8e44600b3fdb5f3d8e742afd87506767d9ffd1660107768172dbd",
+      "operations": [
+        "directory",
+        "search",
+        "read",
+        "command",
+        "submit"
+      ],
+      "schema_sha256": "7edc3ae209d998ccd5ffcbea39ce81808ae1b62cc1eb8e62ec3b272eab06b78b",
+      "tool_names": [
+        "list_directory",
+        "search_text",
+        "read_file",
+        "run_command",
+        "submit_result"
+      ]
+    },
+    "B1": {
+      "config_sha256": "13188075fbb705aaf313bed9c67a03717c4a0852816740e6f2f5b1155c6ed187",
+      "operations": [
+        "directory",
+        "search",
+        "read",
+        "command",
+        "submit"
+      ],
+      "schema_sha256": "24a02f0e0de1cb98c7ace2b9472507efefebb2d59cfd7a8d0855ee88375b7870",
+      "tool_names": [
+        "list_directory",
+        "query_repository_text",
+        "read_file",
+        "run_command",
+        "submit_result"
+      ]
+    },
+    "B2": {
+      "config_sha256": "a87a49f3b1fd6bc88aa2c16c7bb553d41daca6a9ae72ddb7929a223a65418c84",
+      "operations": [
+        "directory",
+        "search",
+        "read",
+        "command",
+        "submit"
+      ],
+      "schema_sha256": "6dc600497cd117a4244b0a13b472f595603e3cfe504390f4f9726fb5bc75c734",
+      "tool_names": [
+        "list_directory",
+        "search_text",
+        "fetch_file_slice",
+        "run_command",
+        "submit_result"
+      ]
+    },
+    "C1": {
+      "config_sha256": "ef3e75a7a006f812bb73ffa7f5f773272e077dd5f3476be267a32aa024c9b2f5",
+      "operations": [
+        "directory",
+        "search",
+        "read",
+        "command",
+        "submit"
+      ],
+      "schema_sha256": "7904bd5d14c8b1ccea18323bc755de92f816352271bc7bdc792b7f5dc6318cec",
+      "tool_names": [
+        "list_directory",
+        "search_text",
+        "read_file",
+        "run_command",
+        "submit_result"
+      ]
+    },
+    "C2": {
+      "config_sha256": "f72a5008ad5ac7415291f1015ac23c804a0823ffa0c5ee499030ba7db7351c9d",
+      "operations": [
+        "directory",
+        "search",
+        "read",
+        "command",
+        "submit"
+      ],
+      "schema_sha256": "726e49c6e4e9957a18d0610307c11cb413e71f6cc12e6aa18e175167920959ee",
+      "tool_names": [
+        "list_directory",
+        "search_text",
+        "read_file",
+        "run_command",
+        "submit_result"
+      ]
+    },
+    "D1": {
+      "config_sha256": "58b622ef489941998c4caba6f6825b0956b66689b3a0b81f8b16b084386e4753",
+      "operations": [
+        "directory",
+        "search",
+        "read",
+        "command",
+        "submit"
+      ],
+      "schema_sha256": "ce4d5b295e6b23f41c8cbac2d338d47e908a5095fc39f0c76520af06f317af32",
+      "tool_names": [
+        "list_directory",
+        "query_repository_text",
+        "read_file",
+        "run_command",
+        "submit_result"
+      ]
+    },
+    "D2": {
+      "config_sha256": "f47c36198965df14f185022f5f56661e3486c0b80e453fa8181898da126d9a8e",
+      "operations": [
+        "directory",
+        "search",
+        "read",
+        "command",
+        "submit"
+      ],
+      "schema_sha256": "11bb262b8d168719cfc5a3740e2828a853b5bd8bf05ac08987bbf3d23c209cda",
+      "tool_names": [
+        "list_directory",
+        "search_text",
+        "fetch_file_slice",
+        "run_command",
+        "submit_result"
+      ]
+    }
+  },
+  "format": "saner-condition-registry-v1",
+  "implementation_sha256": {
+    "src/saner_exp/conditions.py": "7d82c2578f948c6b2246c3b55e062be4c8ec830484a9a6c566960d53071ceb55",
+    "src/saner_exp/tools/backend.py": "5f0643d133b4ad3f0ad44437729b7a7af3caa52ad7a28ca124215e0d589d5336",
+    "src/saner_exp/tools/common.py": "c9e5c9f55baf43a51a6e0bbc376e225640906aab590fa063b06076b0107110f2",
+    "src/saner_exp/tools/interfaces.py": "af41221c72dd97d0fab2c6639cabc055b48b0452cb4560e73bd089ef0aaec451",
+    "src/saner_exp/tools/registry.py": "c045490120ae12ef200c9c364caa38963c83c3fdb3845405c494c573a36fc9fc",
+    "src/saner_exp/tools/schemas.py": "2c6e6c77dd04dd9442d07d03d47b0f563f7f689fd8a26b3a15bd51833fc91604",
+    "src/saner_exp/tools/serialization.py": "ddfbeb419b14ddfb37c0b6fdd90ae187937de5fbea359aa3adc124a49ac70fad"
+  },
+  "response_budgets_bytes": {
+    "core_source": 24576,
+    "total": 32768
+  },
+  "status": "frozen_for_preexperiment"
+}

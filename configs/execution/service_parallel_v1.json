@@ -1,0 +1,19 @@
+{
+  "format": "saner-service-parallel-execution-v1",
+  "status": "approved_before_first_main_episode",
+  "experiment_id": "saner-main-v1",
+  "service_model": "qwen-plus-2025-12-01",
+  "service_shard_count": 3,
+  "partition_rule": "(block_index - 1) modulo service_shard_count",
+  "conditions_within_each_block": "sequential_in_frozen_order",
+  "local_gpu_shard_count": 1,
+  "block_outputs_are_disjoint": true,
+  "duplicate_shard_process_lock": true,
+  "hidden_model_retries": false,
+  "result_relevant_inputs_changed": false,
+  "approved_scope": [
+    "parallelize only independent service-model task-model-repetition blocks",
+    "preserve the frozen order of seven conditions within every block",
+    "preserve all prompts, tools, model parameters, task split, repetitions, checkpoints, and scoring"
+  ]
+}

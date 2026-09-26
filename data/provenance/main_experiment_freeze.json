@@ -1,0 +1,183 @@
+{
+  "activation_evidence": {
+    "local_model_seven_condition_smoke": "passed",
+    "main_author_sources_115": "passed",
+    "main_function_indexes_115": "passed",
+    "main_source_storage_audit": "passed",
+    "main_task_catalog_230": "passed",
+    "preexperiment_evidence_immutable": "passed",
+    "service_fixed_snapshot_endpoint_and_tool_call": "passed",
+    "service_seven_condition_smoke": "passed",
+    "shared_offline_reference_tokenizer": "passed"
+  },
+  "anchors": [
+    {
+      "bytes": 1158,
+      "path": "configs/experiments/main_v1.json",
+      "sha256": "3a96f74aead39da7f40b822b0ddd4d03c4e426b737ec2e70888aca1a6f6f80e2"
+    },
+    {
+      "bytes": 3720,
+      "path": "configs/analysis/main_v1.json",
+      "sha256": "74879d3b3b84d38024eecf10a0c71ae7eac46d3fe0fce72ae56d233cd913a576"
+    },
+    {
+      "bytes": 642,
+      "path": "configs/models/local_qwen3_14b.json",
+      "sha256": "ccc7904da3c39dae0bef220f95ab14798abeec937f693d18300961c8d55c88ef"
+    },
+    {
+      "bytes": 1324,
+      "path": "configs/models/service_qwen_plus.json",
+      "sha256": "9a59946af4b366afa0c5c8f03cae457196dfd1fc1c0986e0c1889ca9eacb7816"
+    },
+    {
+      "bytes": 361,
+      "path": "configs/pricing/qwen_plus_beijing_2026-09-13.json",
+      "sha256": "d7a7452d86b00b4b1ffbadb686ff08a64acc054c70b6a47e848f6289948e42e6"
+    },
+    {
+      "bytes": 3304,
+      "path": "configs/protocol/agent_protocol.json",
+      "sha256": "d173e40d1a33737f637d0b7bf7f94e5872cb98d4c6ff9015c948316e1aba19b1"
+    },
+    {
+      "bytes": 517114,
+      "path": "manifests/agent_tasks/main.jsonl",
+      "sha256": "f7312d32cc428648b0c95faf7913183412991d9bdc346729aa94e49fb76a8729"
+    },
+    {
+      "bytes": 801,
+      "path": "manifests/agent_tasks/manifest.json",
+      "sha256": "c3331703ff622e40db7a5cb824474444548ced5242926e5c2831bfeeef7299a1"
+    },
+    {
+      "bytes": 6276,
+      "path": "manifests/task_split.json",
+      "sha256": "a5cf45f7addb69ff19abe40c2c68c0787c849d270a4792e9b494be8a246a56c3"
+    },
+    {
+      "bytes": 4487,
+      "path": "manifests/condition_registry.json",
+      "sha256": "e09523c72354849b2234093487f55271f10ef4578d650fb5b92c027d28f7390b"
+    },
+    {
+      "bytes": 3303,
+      "path": "manifests/scoring_contract.json",
+      "sha256": "ce5bcbc13c83c928de07e1d74d5f75d6f5041c4e9d6a8bb10f864fd4cacbe942"
+    },
+    {
+      "bytes": 1400,
+      "path": "manifests/tool_contract_verification.json",
+      "sha256": "3b52d5bd1e6d28dac3e17ba26796186429e00d97c0fc1d39442a3de90001cbfd"
+    },
+    {
+      "bytes": 55818,
+      "path": "manifests/main_source_preparation.json",
+      "sha256": "f2b838380d93b96edb2e3ae70c8ac5cda62857cd076ac25cd7029a40706f6606"
+    },
+    {
+      "bytes": 29790,
+      "path": "manifests/main_source_storage_audit.json",
+      "sha256": "69d9617b5016145d39229bb4ec9e447ea710704c51fe0780f87ec3320815de8b"
+    },
+    {
+      "bytes": 71217,
+      "path": "manifests/main_function_index_inventory.json",
+      "sha256": "2e3ad74402e9e1886c018453f8f5cd9d616763814ccc79fe8fd19531c921ec49"
+    },
+    {
+      "bytes": 391436,
+      "path": "manifests/preexperiment_evidence_freeze_2026-09-15.json",
+      "sha256": "0d6accc6bfa76550ef8305de9e34ee39e7dbcc58c1ac326497e0838ed1b21a7e"
+    },
+    {
+      "bytes": 2819,
+      "path": "manifests/service_model_change_approved_2026-09-15.json",
+      "sha256": "f740ed814714bed2e58f077bc85e912caa70ed080fc4799dc20acb4660345d23"
+    },
+    {
+      "bytes": 1465,
+      "path": "manifests/service_qwen_plus_endpoint_validation_2026-09-16.json",
+      "sha256": "20d434916d912d757a931a13e2b3d0eba586d0146a5c455ce0865060b0e0b749"
+    },
+    {
+      "bytes": 5212,
+      "path": "manifests/service_qwen_plus_seven_condition_smoke.json",
+      "sha256": "7bdf150684fbf85c3124707a725304ebe3a3bab7f2df8b6151a87779c58562f0"
+    },
+    {
+      "bytes": 4151,
+      "path": "manifests/local_seven_condition_smoke.json",
+      "sha256": "18051da9d99def9414432c0b1fb618d65b5c267f7717d53e5521f5051800b0ef"
+    },
+    {
+      "bytes": 18315,
+      "path": "src/saner_exp/agent/loop.py",
+      "sha256": "6b756439c58b579ac7fc412e851e4883185ad4de3bd7819630eab1d324eeb150"
+    },
+    {
+      "bytes": 15338,
+      "path": "src/saner_exp/agent/model_client.py",
+      "sha256": "e0b1b0ed12e40e7a6cd520539da16f1361d21d64d9c4ac4f58383b054b80c7ec"
+    },
+    {
+      "bytes": 788,
+      "path": "src/saner_exp/agent/prompt.py",
+      "sha256": "336baee7b84b012383ec958d3f910e48732176d5bb81f8c495a9ee5309dcb4cf"
+    },
+    {
+      "bytes": 6132,
+      "path": "src/saner_exp/evaluation/factorial.py",
+      "sha256": "2da7279e8516a0a703abbe2a9cb2bfa402c2a4a8fc3fa00cd169b397663e284a"
+    },
+    {
+      "bytes": 2636,
+      "path": "src/saner_exp/evaluation/scoring.py",
+      "sha256": "bfc9dc2e69d69d09e0cb0b1be7553954a499e2d8b76954d42e3368caed27c1cb"
+    },
+    {
+      "bytes": 947,
+      "path": "src/saner_exp/experiment/schedule.py",
+      "sha256": "4c8a1cbe7c3aa3e34e58e6e1e5021a423603d7cd0a08b042ee1b5a819e802eb0"
+    },
+    {
+      "bytes": 14053,
+      "path": "scripts/freeze_main_experiment.py",
+      "sha256": "ceefe386cc1fa67aee8468cdc0dab112d151db53bb2d7658c3d0e32188cb137b"
+    }
+  ],
+  "execution_blockers": {
+    "authoritative_tool_contract_v2_normal_boundary_invalid_and_isolation": "pending",
+    "formal_analysis_missingness_and_sensitivity_fixture": "pending",
+    "formal_runner_and_checkpoint_integration_dry_run": "pending"
+  },
+  "experiment_id": "saner-main-v1",
+  "format": "saner-main-experiment-freeze-v1",
+  "frozen_design": {
+    "blocks": 1380,
+    "conditions": 7,
+    "episodes": 9660,
+    "models": [
+      "Qwen3-14B",
+      "qwen-plus-2025-12-01"
+    ],
+    "practical_effect_delta": 0.02,
+    "primary_contrasts": 20,
+    "repetitions": 3,
+    "tasks": 230
+  },
+  "governance": {
+    "execution_requires_all_blockers_to_pass_in_a_new_activation_record": true,
+    "main_experiment_has_not_started": true,
+    "preexperiment_and_smoke_outputs_ineligible_for_main_findings": true,
+    "result_driven_reruns_or_rule_changes_forbidden": true,
+    "tools_prompts_conditions_split_repetitions_and_analysis_thresholds_frozen": true
+  },
+  "schedule": {
+    "bytes": 1119443,
+    "path": "manifests/main_schedule.json",
+    "sha256": "da059901770ee7ad9f72fd55e9b17b0560db05d7e43af6b9361aaa1af1787706"
+  },
+  "status": "frozen_execution_blocked_pending_validation_gates"
+}

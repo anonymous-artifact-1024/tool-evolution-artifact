@@ -1,0 +1,88 @@
+{
+  "format": "saner-main-analysis-plan-v1",
+  "status": "frozen_before_main_execution",
+  "experiment_id": "saner-main-v1",
+  "analysis_unit": "maintenance_task",
+  "primary_metric": "reciprocal_rank",
+  "secondary_metrics": ["recall_at_1", "recall_at_5", "recall_at_10"],
+  "repetition_aggregation": "arithmetic_mean_of_three_repetitions_within_task_model_condition",
+  "models": ["Qwen3-14B", "qwen-plus-2025-12-01"],
+  "instances": [1, 2],
+  "primary_contrasts_per_model_instance": [
+    {"name": "extension_original", "rq": "RQ1", "expression": "C-A"},
+    {"name": "extension_refactored", "rq": "RQ1", "expression": "D-B"},
+    {"name": "refactoring_base", "rq": "RQ2", "expression": "B-A"},
+    {"name": "refactoring_extended", "rq": "RQ2", "expression": "D-C"},
+    {"name": "interaction", "rq": "RQ3", "expression": "(D-C)-(B-A)"}
+  ],
+  "primary_contrast_count": 20,
+  "simultaneous_intervals": {
+    "method": "joint_task_level_max_t_bootstrap",
+    "confidence": 0.95,
+    "resamples": 10000,
+    "seed": 2027,
+    "resampling_block": "whole_task_with_all_models_conditions_and_repetitions",
+    "shared_condition_A_dependence_preserved": true,
+    "zero_standard_error": "exclude_from_maximum_and_report_without_inferential_interval"
+  },
+  "practical_effect": {
+    "primary_absolute_delta": 0.02,
+    "sensitivity_absolute_deltas": [0.01, 0.05],
+    "classification": [
+      "positive_exceeding_threshold",
+      "negative_exceeding_threshold",
+      "practical_equivalence",
+      "inconclusive"
+    ],
+    "primary_delta_or_sample_rules_must_not_change_after_results": true
+  },
+  "missing_evidence": {
+    "agent_outcomes_remain_scored": [
+      "tool_error",
+      "parse_error",
+      "command_timeout",
+      "generation_budget_exhausted",
+      "tool_call_budget_exhausted"
+    ],
+    "second_infrastructure_failure": "missing_evidence_not_zero_score",
+    "primary_task_set": "common_tasks_complete_for_both_models_all_seven_conditions_all_three_repetitions",
+    "report_actual_task_count_and_excluded_ids_with_machine_verifiable_reasons": true,
+    "preserve_existing_scores": true,
+    "sensitivity": "bounded_zero_to_one_worst_case_for_truly_missing_runs",
+    "robustness_claim_forbidden_if_conclusion_changes_under_bounds": true
+  },
+  "component_sensitivity": {
+    "method": "grouped_resampling",
+    "group_source": "existing_linuxflbench_component_metadata_only",
+    "post_result_regrouping_forbidden": true,
+    "report_group_count_and_imbalance": true
+  },
+  "process_metrics": {
+    "selection_and_chain_failures_reported_separately": true,
+    "context_extension_conditions": ["C1", "D1"],
+    "symbol_extension_conditions": ["C2", "D2"],
+    "required_categories": [
+      "new_function_not_selected",
+      "new_function_requested",
+      "valid_effective_return",
+      "successful_response_missing_required_data",
+      "invalid_arguments",
+      "tool_implementation_error",
+      "call_chain_error",
+      "response_truncated",
+      "infrastructure_failure",
+      "stable_checkpoint_resume",
+      "clean_retry",
+      "final_episode_status",
+      "final_task_success"
+    ],
+    "error_denominators": ["model", "condition", "eligible_episodes", "attempted_tool_calls"],
+    "recovery_definition": "an_infrastructure_interruption_followed_by_protocol_legal_resume_or_clean_retry",
+    "recovery_is_not_task_success": true,
+    "final_task_success_definition": "ground_truth_scoring_reports_reciprocal_rank_greater_than_zero",
+    "process_metrics_are_descriptive_not_sample_filters_or_causal_mechanisms": true
+  },
+  "secondary_overall_comparison": "D-A",
+  "formal_results_require_verified_eligible_evidence": true,
+  "preexperiment_and_smoke_results_ineligible": true
+}
